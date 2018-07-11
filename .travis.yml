@@ -1,0 +1,15 @@
+language: python
+python:
+- 3.5
+
+sudo: false
+
+install:
+- pip install nose coverage
+
+script:
+- nosetests --with-coverage --cover-package=sssm
+
+after_success:
+- pip install coveralls
+- coveralls
